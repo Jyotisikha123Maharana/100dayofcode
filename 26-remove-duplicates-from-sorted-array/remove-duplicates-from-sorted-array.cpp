@@ -1,13 +1,26 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        int i = 0 ; 
-        for ( int j = 0 ; j < nums.size(); j++){
-            if (nums[i]!= nums[j]){
-                i++;
-                nums[i]=nums[j]; 
-            }
+        /*unordered_map<int,int>mp;
+        for ( int i = 0 ; i < nums.size(); i++){
+            mp[nums[i]]++;
         }
-     return i+1;
+        vector<int>unique;
+        for (auto j : mp){
+           unique.push_back(j.first) ;
+        }
+        */
+    unordered_map<int, int>mp;
+    for(int i =0 ; i < nums.size(); i++){
+        mp[nums[i]]++;
+
     }
+    nums.clear();
+    for (auto it : mp){
+        nums.push_back(it.first);
+    }
+            sort ( nums.begin(), nums.end());
+            return nums.size();
+    }  
+    
 };
