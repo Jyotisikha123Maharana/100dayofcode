@@ -1,6 +1,8 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
+    
+
        int k=0;
         map<int, int> mp;
         for(auto it : nums) {
@@ -9,5 +11,4 @@ public:
         }
         return k;
     }  
-    
 };
