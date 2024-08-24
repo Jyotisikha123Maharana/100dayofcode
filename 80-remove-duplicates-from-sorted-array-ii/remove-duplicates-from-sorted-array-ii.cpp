@@ -1,14 +1,24 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-    
 
-       int k=0;
-        map<int, int> mp;
-        for(auto it : nums) {
-            mp[it]++;
-            if(mp[it] <= 2) nums[k++] = it;
-        }
-        return k;
-    }  
+        int index = 1;
+        int occurance = 1;
+
+        for(int i=1; i < nums.size(); i++){
+            if (nums[i] == nums[i-1]){
+                occurance++;
+            }else{
+                occurance = 1;
+            }
+
+            if (occurance <= 2){
+                nums[index] = nums[i];
+                index++;
+            }
+        }  
+
+        return index;
+    
+    }
 };
