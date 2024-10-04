@@ -1,8 +1,7 @@
 class Solution {
-
 public:
     void rotate(vector<int>& nums, int k) {
-        vector<int>nums1;
+         vector<int>nums1;
         vector<int>nums2;
        
        int n = nums.size();
@@ -21,6 +20,7 @@ public:
         for(int m = 0 ; m < nums1.size();m++){
             nums[index]=nums1[m];
             index++;
-        }  
+        }
+    
     }
 };
